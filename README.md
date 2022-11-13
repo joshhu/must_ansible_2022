@@ -3,3 +3,5 @@
 * 課程投影片一：https://hackmd.io/@joshhu/SJ0nEuXEo
 * 課程投影片二：https://hackmd.io/@joshhu/BkFxOAXNs
 * 課程投影片三：https://hackmd.io/@joshhu/Bk0xWHUHo
+* 課程投影片四：https://hackmd.io/@joshhu/r1aoRERSs
+* 課程投影片五：https://hackmd.io/@joshhu/HJvmMuCHo
