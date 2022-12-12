@@ -1,0 +1,17 @@
+- name: Copy file, add user and apt upgrade
+  hosts: webservers
+  vars:
+    user: tony
+    filename: "AAA"
+  tasks:
+  - name: Copy file hosts with permissions
+    ansible.builtin.copy:
+      src: /home/ansible/inventory
+      dest: /home/ansible/{{ filename }}
+      mode: '0644'
+
+  - name: Add the user {{ user }}
+    ansible.builtin.user:
+      name: "{{ user }}"
+    become: true
+    become_method: sudo
