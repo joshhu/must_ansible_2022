@@ -1,0 +1,8 @@
+---
+- hosts: server1
+  become: yes
+  
+  roles:
+  - role: gantsign.oh-my-zsh
+    users:
+      - username: ansible

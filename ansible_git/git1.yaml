@@ -1,0 +1,9 @@
+---
+- name: clone git repo
+  hosts: server1
+
+  tasks:
+  - name: clone dotenv
+    ansible.builtin.git:
+      repo: https://github.com/joshhu/dotenvs.git 
+      dest: /home/ansible/dotenvs

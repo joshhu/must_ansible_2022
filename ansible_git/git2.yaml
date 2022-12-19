@@ -1,0 +1,16 @@
+---
+- name: clone git repo
+  hosts: server1
+  vars:
+    zsh_theme: "joshhu"
+
+  tasks:
+  - name: clone dotenv to node
+    ansible.builtin.git:
+      repo: https://github.com/joshhu/dotenvs.git 
+      dest: /home/ansible/dotenvs
+
+  - name: copy .zshrc to home directory
+    ansible.builtin.template:
+      src: /home/ansible/ansible_git/templates/.zshrc.j2
+      dest: /home/ansible/.zshrc.aa

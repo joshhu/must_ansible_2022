@@ -7,3 +7,4 @@
 * 課程投影片五：https://hackmd.io/@joshhu/HJvmMuCHo
 * 課程投影片六：https://hackmd.io/@joshhu/Hk6VTV4dj
 * 課程投影片七：https://hackmd.io/@joshhu/SJ4tTO4Os
+* 課程投影片八：https://hackmd.io/@joshhu/SycqIFaOi
