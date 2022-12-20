@@ -1,0 +1,41 @@
+---
+- name: Install docker
+  hosts: server1
+  become: true
+  vars_files:
+    - vars.yaml
+
+  tasks:
+#    - name: Remove hello-world image
+#      community.docker.docker_image:
+#        name: hello-world
+#        state: absent
+
+    - name: Remove docker engines
+      apt:
+        name: "{{ item }}"
+        state: absent
+        update_cache: true
+      loop: "{{ docker_engines }}"
+    - name: apt autoremove
+      apt:
+        autoremove: true
+
+    - name: Remove docker repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu jammy stable
+        state: absent
+        filename: install_docker
+
+    - name: Remove docker's official GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: absent
+
+    - name: Remove packages
+      apt:
+        name: "{{ item }}"
+        state: absent
+      loop: "{{ requried_packages }}"
+
+

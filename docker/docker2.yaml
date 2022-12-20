@@ -1,0 +1,15 @@
+---
+- name: Install docker
+  hosts: server1
+  become: true
+  vars_files:
+    - vars.yaml
+
+  tasks:
+
+    - name: Install required packages
+      apt:
+        name: "{{ item }}"
+        state: latest
+        update_cache: true
+      loop: "{{ requried_packages }}"

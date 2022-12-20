@@ -1,0 +1,26 @@
+---
+- name: Install docker
+  hosts: server1
+  become: true
+  vars_files:
+    - vars.yaml
+
+  tasks:
+    - name: Remove docker repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu jammy stable
+        state: absent
+        filename: install_docker
+
+    - name: Remove docker's official GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: absent
+
+    - name: Remove packages
+      apt:
+        name: "{{ item }}"
+        state: absent
+      loop: "{{ requried_packages }}"
+
+

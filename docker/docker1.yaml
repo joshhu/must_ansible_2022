@@ -1,0 +1,9 @@
+---
+- name: Install docker 01
+  hosts: server1
+  become: true
+
+  tasks:
+  - name: Test first
+    ping:
+
